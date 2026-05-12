@@ -1,0 +1,85 @@
+@import "tailwindcss" source("../");
+
+@custom-variant dark (&:is(.dark *));
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f7f8fc;
+  --bg-secondary: #eef0f8;
+  --text: #0d0f1a;
+  --text-muted: #6b7280;
+  --accent: #14b8a6;
+  --accent-hover: #0d9488;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(20, 184, 166, 0.18);
+  --card: rgba(255, 255, 255, 0.85);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.dark {
+  --bg: #060914;
+  --bg-secondary: #0c1121;
+  --text: #e2e8f6;
+  --text-muted: #8892aa;
+  --accent: #2dd4bf;
+  --accent-hover: #14b8a6;
+  --glass: rgba(12, 17, 33, 0.75);
+  --glass-border: rgba(45, 212, 191, 0.12);
+  --card: rgba(14, 20, 40, 0.8);
+  --shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+main {
+  padding-top: 80px;
+}
+
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+}
+
+.accent-gradient {
+  background: linear-gradient(135deg, #14b8a6 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-padding {
+  padding: 5rem 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .section-padding {
+    padding: 3.5rem 1rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 2px;
+}
